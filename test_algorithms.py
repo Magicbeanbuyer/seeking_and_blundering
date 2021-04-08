@@ -1,4 +1,4 @@
-from algorithms import binary_search
+from binary_search_demo import binary_search
 
 
 def test_binary_search():

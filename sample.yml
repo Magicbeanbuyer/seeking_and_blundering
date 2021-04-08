@@ -1,0 +1,17 @@
+-   name: orders-dev
+    partition_column: orderDate
+    #   if all columns are used for deduplication, use the following config
+    #    unique_id:
+    #        - 'all_columns'
+    deduplication:
+        unique_id:
+            - orderId
+            - orderStatus
+-   name: orders
+    partition_column: orderDate
+    deduplication:
+        unique_id:
+            - orderId
+            - orderStatus
+        delay_threshold: 30 days
+        watermark: orderDate
