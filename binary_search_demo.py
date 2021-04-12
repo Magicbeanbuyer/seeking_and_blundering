@@ -1,4 +1,7 @@
-def binary_search(pool: list, target):
+from typing import Any
+
+
+def binary_search(pool: list, target: Any) -> Any:
 	sorted_pool = sorted(pool)
 	low = 0
 	high = len(sorted_pool) - 1

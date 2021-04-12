@@ -4,7 +4,7 @@ from zipfile import ZipFile
 
 import yaml
 
-base_path = "."
+base_p = "."
 
 
 def read_file(base_path):
@@ -32,13 +32,13 @@ def get_schema(base_path) -> str:
 		with open("schema/aaa.sql", newline='') as input_file:
 			binary_data = input_file.read()
 			return binary_data.replace('\n', ' ').replace('\t', ' ')
-	# except (FileNotFoundError, KeyError):  # schema doesn't exist
-	# 	print("External schema does not exist.")
 
 
+# except (FileNotFoundError, KeyError):  # schema doesn't exist
+# 	print("External schema does not exist.")
 
-# print(conf_list)
-a = read_file(base_path)
+
+a = read_file(base_p)
 for i in a:
 	dedup = SimpleNamespace(**i["deduplication"])
 	print(dedup.watermark)
