@@ -14,5 +14,5 @@ class Person:
 if __name__ == "__main__":
 	me = Person()
 	print(me.first_name)
-	me.first_name = "xiatong"
+	me.first_name = "X"
 	print(me.first_name)
