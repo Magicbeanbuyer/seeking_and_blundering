@@ -6,7 +6,6 @@ sn = SimpleNamespace(**data)
 
 print(getattr(sn, "name"))
 print(getattr(sn, "job", "no job attribute"))
-# print(SimpleNamespace(**None))
 
 key = "hometown"
 a = SimpleNamespace(**data[key]) if key in data else None
