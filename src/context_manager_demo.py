@@ -8,7 +8,7 @@ base_p = "."
 
 
 def read_file(base_path):
-	file_path = "sample.yml"
+	file_path = "../resource/sample.yml"
 
 	if base_path.endswith(".zip"):
 		with ZipFile(base_path) as archive:  # Open the .zip file
