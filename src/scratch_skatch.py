@@ -1,6 +1,6 @@
-from time import sleep
-a = 2
-if a == 1:
-	print("sleeping...")
-	sleep(5)
-print("done")
+def divide(a: int, b: int):
+	return a / b
+
+
+c = divide(a=3, b=4)
+print(c)
