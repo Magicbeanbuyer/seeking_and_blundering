@@ -1,7 +1,8 @@
 class Lala:
-	def __init__(self, a):
-		self.a = a
-		self.b = None
+    def __init__(self, a):
+        self.a = a
+        self.b = None
+
 
 my_lala = Lala("aaa", "ccc")
 print(my_lala.a)
