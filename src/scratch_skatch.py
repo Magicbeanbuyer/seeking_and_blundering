@@ -1,6 +1,6 @@
-def divide(numerator: int, b: int):
-	return numerator / b
+def divide(a: float, b: float):
+	return a / b
 
 
-c = divide(numerator=3, b=4)
+c = divide(a=3, b=4.5)
 print(c)
