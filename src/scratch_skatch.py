@@ -1,4 +1,4 @@
-def divide(numerator: float, denominator: float):
+def divide(numerator: float, denominator: int):
 	return numerator / denominator
 
 
