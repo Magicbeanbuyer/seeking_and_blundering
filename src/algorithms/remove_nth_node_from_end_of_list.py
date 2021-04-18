@@ -1,4 +1,4 @@
-from pprint import pprint
+from typing import Optional
 
 
 class ListNode:
@@ -7,7 +7,7 @@ class ListNode:
         self.next = next
 
     def __str__(self):
-        return f"node value: {self.val}"
+        return f"data: {self.val} pointer: {self.next}"
 
 
 class Solution:
@@ -23,17 +23,17 @@ class Solution:
 
         return i + 1
 
-    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> Optional[ListNode]:
         list_length = self.measure_list_length(head)
         nth_node_index = list_length - n
-        i = 0
+        if nth_node_index == 0:
+            return head.next
+
+        i = 1
         node_a = head
-        while i < n:
-            node_b = node_a.next
+        while i < nth_node_index:
+            node_a = node_a.next
             i += 1
-            node_a = node_b
 
-
-if __name__ == "__main__":
-    linked_list_dict = {f"n{i}": ListNode(i) for i in range(6)}
-    pprint(linked_list_dict)
+        node_a.next = node_a.next.next
+        return head

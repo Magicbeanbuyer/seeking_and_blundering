@@ -13,8 +13,3 @@ for i in range(length):
 
 def test_measure_list_length():
     assert Solution.measure_list_length(node_list[0]) == length
-
-
-# pprint(linked_list_dict)
-
-# test_measure_list_length
