@@ -1,5 +1,6 @@
 from pprint import pprint
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -10,7 +11,6 @@ class ListNode:
 
 
 class Solution:
-
     @staticmethod
     def measure_list_length(head: ListNode) -> int:
         """The method measured the lengh of a list"""
