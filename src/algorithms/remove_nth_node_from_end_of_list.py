@@ -24,8 +24,14 @@ class Solution:
         return i + 1
 
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        nth_node_i = n - (i - 1)
-        pass
+        list_length = self.measure_list_length(head)
+        nth_node_index = list_length - n
+        i = 0
+        node_a = head
+        while i < n:
+            node_b = node_a.next
+            i += 1
+            node_a = node_b
 
 
 if __name__ == "__main__":
