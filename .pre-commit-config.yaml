@@ -3,6 +3,7 @@ repos:
     rev: v3.4.0
     hooks:
       - id: check-yaml
+      - id: check-json
   - hooks:
       - id: commitizen
         stages:
