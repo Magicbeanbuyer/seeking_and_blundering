@@ -22,7 +22,6 @@ repos:
     rev: 20.8b1
     hooks:
       - id: black
-        stages: [prepare-commit-msg]
 
   - repo: https://github.com/pycqa/flake8
     rev: 3.9.1
