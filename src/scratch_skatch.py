@@ -1,8 +1,9 @@
-from os import getenv
+"""Scratch and erase."""
 
 
 def divide(numerator: float, denominator: int) -> float:
-    """
+    """Divide and conquer.
+
     Args:
         numerator (float): the dividend
         denominator (int): the divisor, must be integer
