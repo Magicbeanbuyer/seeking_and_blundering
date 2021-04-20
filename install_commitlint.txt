@@ -1,4 +1,0 @@
-1. download and install node.js https://nodejs.org/en/
-2. check permission ls -la /usr/local/lib/node_modules
-3. change permission sudo chown -R $USER /usr/local/lib/node_modules
-4. install npm install -g @commitlint/cli @commitlint/config-conventional
