@@ -1,5 +1,18 @@
-def divide(a: float, b: float) -> int:
-    return a / b
+"""Demonstrate linters."""
 
-c = divide(5.4, 0.9)
+
+def divide(numerator: float, denominator: int) -> float:
+    """Divide two numbers.
+
+    Args:
+        numerator (float): numerator
+        denominator(float): denominator
+
+    Returns:
+        float: quotient
+    """
+    return numerator / denominator
+
+
+c = divide(5.4, int(0.9))
 print(c)
