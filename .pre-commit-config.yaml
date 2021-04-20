@@ -1,3 +1,8 @@
+default_language_version:
+  python: python3.8
+
+fail_fast: true
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
@@ -6,19 +11,32 @@ repos:
         args: [--autofix]
       - id: check-yaml
       - id: check-json
-  - hooks:
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.17.3
+    hooks:
       - id: commitizen
         stages:
           - commit-msg
-    repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.17.2
+
   - repo: https://github.com/psf/black
-    rev: 19.10b0 # Replace by any tag/version: https://github.com/psf/black/tags
+    rev: 20.8b1
     hooks:
       - id: black
-        language_version: python3 # Should be a command that runs python3.6+
+
   - repo: https://github.com/pycqa/flake8
-    rev: 3.8.4
+    rev: 3.9.1
     hooks:
       - id: flake8
         additional_dependencies: [ flake8-docstrings ]
+        args: [--docstring-convention=google]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.812
+    hooks:
+      - id: mypy
+
+  - repo: https://github.com/terraform-linters/tflint
+    rev: v0.27.0
+    hooks:
+      - id: tflint

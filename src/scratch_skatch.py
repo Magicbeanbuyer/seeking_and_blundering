@@ -1,17 +1,18 @@
-"""Scratch and erase."""
+"""Demonstrate linters."""
 
 
 def divide(numerator: float, denominator: int) -> float:
-    """Divide and conquer.
+    """Divide two numbers.
 
     Args:
-        numerator (float): the dividend
-        denominator (int): the divisor, must be integer
+        numerator (float): numerator
+        denominator(float): denominator
 
-    float: the quotient of the division
+    Returns:
+        float: quotient
     """
     return numerator / denominator
 
 
-c = divide(numerator=3, denominator=int(4.5))
+c = divide(5.4, int(0.9))
 print(c)
