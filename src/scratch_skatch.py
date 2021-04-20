@@ -15,4 +15,4 @@ def divide(numerator: float, denominator: int) -> float:
 
 
 c = divide(5.4, int(0.9))
-print(f"value {c}")
+print(f"value is {c}")
