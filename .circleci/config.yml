@@ -8,7 +8,7 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run: echo $CIRCLE_COMPARE_URL
+      - run: echo $CIRCLE_COMPARE_URL "\n" << pipeline.git.revision >> "\n" << pipeline.git.base_revision >>
 
 workflows:
   main:
