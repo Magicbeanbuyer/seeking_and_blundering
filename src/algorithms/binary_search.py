@@ -1,4 +1,3 @@
-
 def binary_search(pool: list, target):
     """write a very loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog description"""
     sorted_pool = sorted(pool)
@@ -12,4 +11,6 @@ def binary_search(pool: list, target):
             low = mid
         else:
             high = mid
+    print(
+        f"loooooooooooooooooooooooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog")
     return None
