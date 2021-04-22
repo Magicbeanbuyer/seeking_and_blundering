@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18d44e9c-aa7e-4ec7-9d3a-a00c980201e9" name="Default Changelist" comment="feat: add todo">
-      <change beforePath="$PROJECT_DIR$/src/algorithms/binary_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/binary_search.py" afterDir="false" />
-    </list>
+    <list default="true" id="18d44e9c-aa7e-4ec7-9d3a-a00c980201e9" name="Default Changelist" comment="feat: add todo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +50,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GitStage.ChangesTree.GroupingKeys" value="directory&#10;module&#10;repository" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TF_FMT" value="true" />
@@ -61,7 +60,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -199,6 +198,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ShelveChangesManager">
+    <option name="remove_strategy" value="true" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -246,7 +248,7 @@
       <workItem from="1618991073799" duration="512000" />
       <workItem from="1619076595989" duration="526000" />
       <workItem from="1619077631792" duration="9529000" />
-      <workItem from="1619101429925" duration="4258000" />
+      <workItem from="1619101429925" duration="4464000" />
     </task>
     <task id="LOCAL-00001" summary="feat: creat binary_search()">
       <created>1617006278117</created>
@@ -528,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619106460921</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="feat: add todo">
+      <created>1619106529135</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1619106529135</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
