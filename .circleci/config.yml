@@ -8,7 +8,21 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run: echo $CIRCLE_COMPARE_URL "\n" << pipeline.git.revision >> "\n" << pipeline.git.base_revision >>
+      - run:
+          - name: "install golang"
+          - command: |
+              sudo apt install software-properties-common gpg
+              sudo add-apt-repository ppa:longsleep/golang-backports
+              sudo apt update
+              sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6BC817356A3D45E
+              sudo apt install golang-go
+      - run:
+          - name: "post-commit hook"
+          - command: |
+              pip install pre-commit pre-commit
+              pre-commit install --install-hooks --hook-type
+              pre-commit run --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
+
 
 workflows:
   main:
