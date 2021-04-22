@@ -16,4 +16,6 @@ def binary_search(pool: list, target):
     )
     return None
 
+
+# TODO: test before commit
 binary_search([1, 2, 3], 3)
