@@ -1,5 +1,6 @@
 
 def binary_search(pool: list, target):
+    """write a very loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog description"""
     sorted_pool = sorted(pool)
     low = 0
     high = len(sorted_pool) - 1
