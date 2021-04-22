@@ -14,3 +14,5 @@ def binary_search(pool: list, target):
     print(
         f"loooooooooooooooooooooooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog")
     return None
+
+binary_search([1, 2, 3], 3)
