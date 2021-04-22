@@ -1,3 +1,4 @@
+
 def binary_search(pool: list, target):
     sorted_pool = sorted(pool)
     low = 0
