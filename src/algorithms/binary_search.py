@@ -12,7 +12,8 @@ def binary_search(pool: list, target):
         else:
             high = mid
     print(
-        f"loooooooooooooooooooooooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog")
+        f"loooooooooooooooooooooooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog"
+    )
     return None
 
 binary_search([1, 2, 3], 3)
