@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18d44e9c-aa7e-4ec7-9d3a-a00c980201e9" name="Default Changelist" comment="feat: add todo" />
+    <list default="true" id="18d44e9c-aa7e-4ec7-9d3a-a00c980201e9" name="Default Changelist" comment="chore: change workspace">
+      <change beforePath="$PROJECT_DIR$/.idea/seeking-and-blundering.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/seeking-and-blundering.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +64,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -249,6 +254,8 @@
       <workItem from="1619076595989" duration="526000" />
       <workItem from="1619077631792" duration="9529000" />
       <workItem from="1619101429925" duration="4464000" />
+      <workItem from="1619165783955" duration="168000" />
+      <workItem from="1619165963665" duration="113000" />
     </task>
     <task id="LOCAL-00001" summary="feat: creat binary_search()">
       <created>1617006278117</created>
