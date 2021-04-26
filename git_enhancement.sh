@@ -2,7 +2,6 @@
 # default "local" when no argument passed, "circleci" when running in circleci
 runtime=${1-local}
 
- install packages
 pip install pre-commit commitizen --quiet
 
 # check installation
@@ -11,7 +10,6 @@ echo "commitizen $(cz version)"
 
 # install hooks to project_root/.git/hooks
 # pre-commit: python, terraform, json, yaml and bash linting hooks
-
 pre-commit install --hook-type pre-commit
 
 if [ "$runtime" = "local" ]; then
