@@ -10,7 +10,8 @@ echo "commitizen $(cz version)"
 # install hooks to project_root/.git/hooks
 # pre-commit: python, terraform, json, yaml and bash linting hooks
 # commit-msg: conventional commit linting hook
-pre-commit install --hook-type pre-commit,commit-msg
+pre-commit install --hook-type pre-commit
+pre-commit install --hook-type commit-msg
 
 # install hook packages to ~/.cache/pre-commit
 # use pre-commit gc once in a while to collect garbage
