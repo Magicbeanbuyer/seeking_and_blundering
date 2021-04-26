@@ -9,6 +9,7 @@ repos:
     hooks:
       - id: pretty-format-json
         args: [ --autofix ]
+        stages: [commit]
       - id: check-yaml
       - id: check-json
 
