@@ -1,7 +1,8 @@
 #!/bin/bash
-circleci=$1
+# default "local" when no argument passed, "circleci" when running in circleci
+runtime=${1-local}
 
-# install packages
+ install packages
 pip install pre-commit commitizen --quiet
 
 # check installation
@@ -13,12 +14,9 @@ echo "commitizen $(cz version)"
 
 pre-commit install --hook-type pre-commit
 
-if [ "$circleci" = "" ]; then
-  # only install locally, in CircleCI commitizen won't be called by pre-commit
+if [ "$runtime" = "local" ]; then
   # commit-msg: conventional commit linting hook
+  # only install commit-msg hook via pre-commit locally
+  # commitizen won't be called by pre-commit in CircleCI
   pre-commit install --hook-type commit-msg
 fi
-
-# install hook packages to ~/.cache/pre-commit
-# use pre-commit gc once in a while to collect garbage
-pre-commit install-hooks
