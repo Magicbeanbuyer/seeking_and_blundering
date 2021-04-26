@@ -1,7 +1,7 @@
 default_language_version:
   python: python3.8
 
-fail_fast: true
+fail_fast: true # stops executing subsequent hooks if one hook fails
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
