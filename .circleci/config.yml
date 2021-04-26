@@ -22,7 +22,7 @@ jobs:
       - run:
           name: "lint code and commit message"
           command: |
-            pre-commit run --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
+            pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
             cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
 
 workflows:
