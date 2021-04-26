@@ -1,7 +1,7 @@
 default_language_version:
   python: python3.8
 
-default_stages: [commit]
+default_stages: [commit, manual]
 
 fail_fast: true # stops executing subsequent hooks if one hook fails
 
