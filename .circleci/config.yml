@@ -17,12 +17,12 @@ jobs:
               sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6BC817356A3D45E
               sudo apt install golang-go
       - run:
-          - name: "post-commit hook"
+          - name: "pre-commit hook"
           - command: |
-              pip install pre-commit pre-commit
-              pre-commit install --install-hooks --hook-type
-              pre-commit run --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
-
+              ../git_enhancement.sh
+#              pip install pre-commit
+#              pre-commit install
+#              pre-commit run --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
 
 workflows:
   main:
