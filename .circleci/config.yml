@@ -18,8 +18,7 @@ jobs:
               sudo apt install golang-go
       - run:
           - name: "pre-commit hook"
-          - command: |
-              ../git_enhancement.sh
+          - command: ./git_enhancement.sh circleci
 #              pip install pre-commit
 #              pre-commit install
 #              pre-commit run --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
