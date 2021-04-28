@@ -8,17 +8,10 @@ jobs:
     executor: python/default
     steps:
       - checkout
+
       - run:
-          name: "install golang"
-          command: |
-            sudo apt install software-properties-common gpg
-            sudo add-apt-repository ppa:longsleep/golang-backports
-            sudo apt update
-            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6BC817356A3D45E
-            sudo apt install golang-go
-      - run:
-          name: "install pre-commit and commitizen"
-          command: ./git_enhancement.sh circleci
+          name: "install pre-commit hook"
+          command: pre-commit install --hook-type pre-commit
       - run:
           name: "lint code and commit message"
           command: |
