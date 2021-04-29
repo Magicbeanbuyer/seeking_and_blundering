@@ -14,12 +14,12 @@ RUN apt update && apt install sudo \
     ssh \
     ca-certificates
 
-# install go for tflint
+# install Go for tflint
 RUN curl -O "https://dl.google.com/go/$GO_BINARY" \
     && tar xvf $GO_BINARY \
     && sudo mv go /usr/local \
     && rm $GO_BINARY
-# add go the PATH
+# add Go to PATH
 ENV PATH=$PATH:/usr/local/go/bin
 
 RUN pip install pre-commit commitizen --quiet
