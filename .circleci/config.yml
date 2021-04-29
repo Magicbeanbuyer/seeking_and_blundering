@@ -5,8 +5,8 @@ jobs:
     docker:
       - image: magicbeanbuyer\circleci-images:1.1.0
         auth:
-          username: magicbeanbuyer
-          password: $DOCKERHUB_PASSWORD
+          username: $USERNAME
+          password: $PASSWORD
     steps:
       - checkout
       - run:
@@ -36,7 +36,11 @@ jobs:
             - project
 
   check-data-persistance:
-    executor: python/default
+    docker:
+      - image: magicbeanbuyer\circleci-images:1.1.0
+        auth:
+          username: $USERNAME
+          password: $PASSWORD
     steps:
       - attach_workspace:
           at: /home/circleci
@@ -51,7 +55,9 @@ workflows:
     jobs:
       - lint-code:
           name: "lint code"
+          context: [DOCKER_HUB]
       - check-data-persistance:
           name: "check data persistence"
+          context: [DOCKER_HUB]
           requires:
             - "lint code"
