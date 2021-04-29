@@ -26,4 +26,3 @@ RUN pip install pre-commit commitizen --quiet
 
 # set /home/circleci as home dir
 RUN mkdir /home/circleci
-ENV HOME=/home/circleci
