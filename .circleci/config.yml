@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Add github.com to known hosts"
+          command: ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run:
           name: "lint code and commit message"
           command: |
             pre-commit install --hook-type pre-commit
