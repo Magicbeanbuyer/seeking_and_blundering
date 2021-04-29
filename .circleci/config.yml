@@ -14,6 +14,10 @@ jobs:
           command: |
             echo $PATH
             go version
+            ls
+      - run:
+          name: "pre-commit"
+          command: pre-commit install
       #      - run:
       #          name: "Setup Environment Variables"
       #          command: echo "export PATH=/usr/local/go/bin:$PATH" >> $BASH_ENV
