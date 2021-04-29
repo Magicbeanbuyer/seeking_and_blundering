@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   lint-code:
     docker:
-      - image: magicbeanbuyer/circleci-images:1.5.0
+      - image: magicbeanbuyer/circleci-images:1.7.0
         auth:
           username: $USERNAME
           password: $PASSWORD
