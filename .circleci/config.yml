@@ -30,7 +30,7 @@ jobs:
             - project
 
   check-data-persistance:
-    executor: default/python
+    executor: python/default
     steps:
       - attach_workspace:
           at: /home/circleci
