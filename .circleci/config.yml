@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: "install git hook"
-          commnad: pre-commit install --hook-type pre-commit
+          command: pre-commit install --hook-type pre-commit
       - run:
           name: "lint code and commit message"
           command: |
