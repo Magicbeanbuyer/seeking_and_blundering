@@ -11,7 +11,9 @@ jobs:
       - checkout
       - run:
           name: "print path"
-          command: echo $PATH
+          command: |
+            echo $PATH
+            go version
       #      - run:
       #          name: "Setup Environment Variables"
       #          command: echo "export PATH=/usr/local/go/bin:$PATH" >> $BASH_ENV
@@ -37,7 +39,7 @@ jobs:
       #            pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
       #            cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
       - persist_to_workspace:
-          root: /home/circleci
+          root: /root
           paths:
             - project
 
