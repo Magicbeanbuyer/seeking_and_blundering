@@ -32,7 +32,7 @@ jobs:
       - persist_to_workspace:
           root: /home/circleci
           paths:
-            - project
+            - project/*
 
   check-data-persistance:
     executor: python/default
@@ -43,8 +43,6 @@ jobs:
           name: "temp"
           command: |
             echo $PWD
-            echo $(ls)
-            cd project
             echo $(ls)
 
 workflows:
