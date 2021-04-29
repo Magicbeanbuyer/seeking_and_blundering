@@ -10,29 +10,32 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Setup Environment Variables"
-          command: echo "export PATH=/usr/local/go/bin:$PATH" >> $BASH_ENV
-      - run:
-          name: "check path"
-          command: |
-            echo $PWD
-            echo $(ls)
-            #      - run:
-            #          name: "install golang"
-            #          command: |
-            #            sudo apt install software-properties-common gpg
-            #            sudo add-apt-repository ppa:longsleep/golang-backports
-            #            sudo apt update
-            #            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6BC817356A3D45E
-            #            sudo apt install golang-go
-            #      - run:
-            #          name: "install pre-commit and commitizen"
-            #          command: ./git_enhancement.sh circleci
-            - run:
-                name: "lint code and commit message"
-                command: |
-                  pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
-                  cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
+          name: "print path"
+          command: echo $PATH
+      #      - run:
+      #          name: "Setup Environment Variables"
+      #          command: echo "export PATH=/usr/local/go/bin:$PATH" >> $BASH_ENV
+      #      - run:
+      #          name: "check path"
+      #          command: |
+      #            echo $PWD
+      #            echo $(ls)
+      #      - run:
+      #          name: "install golang"
+      #          command: |
+      #            sudo apt install software-properties-common gpg
+      #            sudo add-apt-repository ppa:longsleep/golang-backports
+      #            sudo apt update
+      #            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6BC817356A3D45E
+      #            sudo apt install golang-go
+      #      - run:
+      #          name: "install pre-commit and commitizen"
+      #          command: ./git_enhancement.sh circleci
+      #      - run:
+      #          name: "lint code and commit message"
+      #          command: |
+      #            pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
+      #            cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
       - persist_to_workspace:
           root: /home/circleci
           paths:
