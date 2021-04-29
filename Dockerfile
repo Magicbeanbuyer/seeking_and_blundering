@@ -23,6 +23,3 @@ RUN curl -O "https://dl.google.com/go/$GO_BINARY" \
 ENV PATH=$PATH:/usr/local/go/bin
 
 RUN pip install pre-commit commitizen --quiet
-
-# set /home/circleci as home dir
-RUN mkdir /home/circleci
