@@ -9,6 +9,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "check path"
+          command: |
+            echo $PWD
+            echo $(ls)
+            cd project
+            echo $(ls)
+      - run:
           name: "install golang"
           command: |
             sudo apt install software-properties-common gpg
@@ -38,6 +45,8 @@ jobs:
           name: "temp"
           command: |
             echo $PWD
+            echo $(ls)
+            cd project
             echo $(ls)
 
 workflows:
