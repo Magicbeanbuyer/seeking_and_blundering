@@ -7,6 +7,8 @@ jobs:
         auth:
           username: $USERNAME
           password: $PASSWORD
+    environment:
+      PATH: $PATH:/usr/local/go/bin
     steps:
       - checkout
       - run:
