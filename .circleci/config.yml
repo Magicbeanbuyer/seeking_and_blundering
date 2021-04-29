@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   lint-code:
     docker:
-      - image: magicbeanbuyer/circleci-images:1.1.0
+      - image: magicbeanbuyer/circleci-images:1.2.0
         auth:
           username: $USERNAME
           password: $PASSWORD
@@ -37,7 +37,7 @@ jobs:
 
   check-data-persistance:
     docker:
-      - image: magicbeanbuyer/circleci-images:1.1.0
+      - image: magicbeanbuyer/circleci-images:1.2.0
         auth:
           username: $USERNAME
           password: $PASSWORD
