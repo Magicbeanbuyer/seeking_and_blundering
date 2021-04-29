@@ -32,7 +32,7 @@ jobs:
       - persist_to_workspace:
           root: /home/circleci
           paths:
-            - project/*
+            - project
 
   check-data-persistance:
     executor: python/default
@@ -48,5 +48,9 @@ jobs:
 workflows:
   main:
     jobs:
-      - lint-code
-      - check-data-persistance
+      - lint-code:
+          name: "lint code"
+      - check-data-persistance:
+          name: "check data persistence"
+          requires:
+            - "lint code"
