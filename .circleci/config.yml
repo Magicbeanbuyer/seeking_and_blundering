@@ -13,8 +13,6 @@ jobs:
           command: |
             echo $PWD
             echo $(ls)
-            cd project
-            echo $(ls)
       - run:
           name: "install golang"
           command: |
