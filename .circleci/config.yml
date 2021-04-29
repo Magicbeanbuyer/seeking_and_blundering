@@ -8,44 +8,17 @@ jobs:
           username: $USERNAME
           password: $PASSWORD
     steps:
-      - run:
-          name: "path"
-          command: echo $PWD
       - checkout
       - run:
-          name: "print path"
+          name: "lint code and commit message"
           command: |
-            echo $PATH
-            go version
-            echo $PWD
-            ls
-      #      - run:
-      #          name: "pre-commit"
-      #          command: pre-commit install --hook-type pre-commit
-      #      - run:
-      #          name: "lint code and commit message"
-      #          command: |
-      #            pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
-      #            cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
+            pre-commit install --hook-type pre-commit
+            pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
+            cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
       - persist_to_workspace:
           root: /home/circleci
           paths:
             - project
-
-  check-data-persistance:
-    docker:
-      - image: magicbeanbuyer/circleci-images:1.5.0
-        auth:
-          username: $USERNAME
-          password: $PASSWORD
-    steps:
-      - attach_workspace:
-          at: /home/circleci
-      - run:
-          name: "temp"
-          command: |
-            echo $PWD
-            echo $(ls)
 
 workflows:
   main:
@@ -53,8 +26,3 @@ workflows:
       - lint-code:
           name: "lint code"
           context: [DOCKER_HUB]
-      - check-data-persistance:
-          name: "check data persistence"
-          context: [DOCKER_HUB]
-          requires:
-            - "lint code"
