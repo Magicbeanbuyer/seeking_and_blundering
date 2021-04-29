@@ -8,6 +8,9 @@ jobs:
           username: $USERNAME
           password: $PASSWORD
     steps:
+      - run:
+          name: "path"
+          command: echo $PWD
       - checkout
       - run:
           name: "print path"
