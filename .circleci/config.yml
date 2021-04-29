@@ -10,18 +10,38 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Add github.com to known hosts"
-          command: ssh-keyscan github.com >> ~/.ssh/known_hosts
+          name: "print path"
+          command: |
+            echo $PATH
+            go version
+            ls
+      - run:
+          name: "pre-commit"
+          command: pre-commit install --hook-type pre-commit
       - run:
           name: "lint code and commit message"
           command: |
-            pre-commit install --hook-type pre-commit
             pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
             cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
       - persist_to_workspace:
-          root: /home/circleci
+          root: /root
           paths:
             - project
+
+  check-data-persistance:
+    docker:
+      - image: magicbeanbuyer/circleci-images:1.7.0
+        auth:
+          username: $USERNAME
+          password: $PASSWORD
+    steps:
+      - attach_workspace:
+          at: /root/project
+      - run:
+          name: "temp"
+          command: |
+            echo $PWD
+            echo $(ls)
 
 workflows:
   main:
@@ -29,3 +49,8 @@ workflows:
       - lint-code:
           name: "lint code"
           context: [DOCKER_HUB]
+      - check-data-persistance:
+          name: "check data persistence"
+          context: [DOCKER_HUB]
+          requires:
+            - "lint code"
