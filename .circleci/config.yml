@@ -11,21 +11,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "print path"
-          command: |
-            echo $PATH
-            go version
-            ls
-      - run:
-          name: "pre-commit"
-          command: pre-commit install --hook-type pre-commit
-      - run:
           name: "lint code and commit message"
           command: |
+            pre-commit install --hook-type pre-commit
             pre-commit run --hook-stage manual --from-ref << pipeline.git.base_revision >> --to-ref << pipeline.git.revision >>
             cz check --rev-range << pipeline.git.base_revision >>..<< pipeline.git.revision >>
       - persist_to_workspace:
-          root: /root
+          root: /home/circleci
           paths:
             - project
 
@@ -37,7 +29,7 @@ jobs:
           password: $PASSWORD
     steps:
       - attach_workspace:
-          at: /root/project
+          at: /home/circleci
       - run:
           name: "temp"
           command: |
