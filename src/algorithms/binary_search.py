@@ -1,4 +1,5 @@
 def binary_search(pool: list, target):
+    """write a very loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog description"""
     sorted_pool = sorted(pool)
     low = 0
     high = len(sorted_pool) - 1
@@ -10,4 +11,11 @@ def binary_search(pool: list, target):
             low = mid
         else:
             high = mid
+    print(
+        f"loooooooooooooooooooooooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooog"
+    )
     return None
+
+
+# TODO: test before commit
+binary_search([1, 2, 3], 3)
