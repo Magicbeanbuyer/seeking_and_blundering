@@ -4,23 +4,17 @@ default_language_version:
 fail_fast: true # stops executing subsequent hooks if one hook fails
 
 repos:
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.2.1
-    hooks:
-      - id: prettier
-        stages: [commit]
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
     hooks:
       - id: check-yaml
       - id: check-json
 
-  #TODO: remove black
   - repo: https://github.com/psf/black
     rev: 21.4b0
     hooks:
       - id: black
+        args: [-l 100, -v]
         stages: [commit]
 
   - repo: https://github.com/pycqa/flake8
@@ -28,13 +22,12 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies: [flake8-docstrings]
-        args: [--docstring-convention=google, --max-line-length=88]
+        args: [--docstring-convention=google, --max-line-length=100]
 
   - repo: https://github.com/PyCQA/pylint
     rev: pylint-2.8.1
     hooks:
       - id: pylint
-        args: [--max-line-length=88]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v0.812
