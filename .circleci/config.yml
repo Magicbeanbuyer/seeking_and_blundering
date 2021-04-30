@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: "lint code and commit message"
-          command: .circleci/bin/code_and_commit_linter.sh << pipeline.git.base_revision >> << pipeline.git.revision >>
+          command: .circleci/bin/code_and_commit_linter.sh << pipeline.git.base_revision >>
       - persist_to_workspace:
           root: /home/circleci
           paths:
