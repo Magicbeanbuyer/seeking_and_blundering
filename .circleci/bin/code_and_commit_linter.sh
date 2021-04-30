@@ -10,6 +10,12 @@ fi
 
 branch_head="$(git rev-parse HEAD)"
 
-#pre-commit install --hook-type pre-commit
 pre-commit run --hook-stage manual --from-ref "$first_commit" --to-ref "$branch_head"
-cz check --rev-range "$first_commit".."$branch_head"
+
+# cz check --rev-range fails when "$first_commit" = "$branch_head"
+if [ "$first_commit" = "$branch_head" ]; then
+  commit_message="$(git log --format=%B -n1 04e46b5)"
+  cz check -m "$commit_message"
+else
+  cz check --rev-range "$first_commit".."$branch_head"
+fi
