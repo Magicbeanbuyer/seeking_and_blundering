@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# make sure when pre-commit fails but commitizen succeeds, the pipeline still fails
+set -eo pipefail
+
 pipeline_base_revision=$1
 
 # get the ID of the first commit of the branch
