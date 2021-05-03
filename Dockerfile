@@ -12,7 +12,8 @@ RUN apt update && apt install sudo \
     && sudo apt install curl \
     git \
     ssh \
-    ca-certificates
+    ca-certificates \
+    zip
 
 # install Go for tflint
 RUN curl -O "https://dl.google.com/go/$GO_BINARY" \
