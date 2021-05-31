@@ -2,35 +2,35 @@ import pytest
 
 
 @pytest.fixture
-def letter_list():
-    return ["a", "b", "c"]
+def order():
+    return []
 
 
-@pytest.fixture(scope="session")
-def num_list():
-    return [1, 2, 3]
+@pytest.fixture
+def outer(order, inner):
+    order.append("outer")
 
 
-def test_one(letter_list):
-    letter_list.append("d")
-    assert letter_list == ["a", "b", "c", "d"]
+# class TestOne:
+@pytest.fixture
+def inner(order):
+    order.append("one")
 
 
-def test_two(letter_list):
-    letter_list.append("e")
-    assert letter_list == ["a", "b", "c", "e"]
+def test_order(order, outer):
+    assert order == ["one", "outer"]
 
 
-def test_three(num_list):
-    num_list.append(4)
-    assert num_list == [1, 2, 3, 4]
-
-
-def test_four(num_list):
-    num_list.append(5)
-    assert num_list == [1, 2, 3, 5]
-
-
-def test_five(num_list):
-    num_list.append(6)
-    assert num_list == [1, 2, 3, 4, 5, 6]  # num 5 was appended at test_four
+# class TestTwo:
+#     @pytest.fixture
+#     def inner(self, order):
+#         order.append("two")
+#
+#     def test_order(self, order, outer):
+#         assert order == ["two", "outer"]
+#
+#
+# def test_inner_from_outside_a_class(order, outer):
+#     assert order == ["outer"]
+#     assert order == ["one", "outer"]
+#     assert order == ["two", "outer"]
