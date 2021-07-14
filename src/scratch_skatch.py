@@ -1,4 +1,5 @@
 """Demonstrate linters."""
+import os
 
 
 def divide(numerator: float, denominator: int) -> float:
@@ -14,5 +15,13 @@ def divide(numerator: float, denominator: int) -> float:
     return numerator / denominator
 
 
-c = divide(5.4, int(0.9))
-print(f"value  {c}")
+def print_env():
+    env_dict = dict(os.environ)
+    print(env_dict)
+    return env_dict
+
+
+if __name__ == "__main__":
+    c = divide(5.4, int(1.9))
+    print(f"value  {c}")
+    print_env()
