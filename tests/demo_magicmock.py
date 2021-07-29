@@ -13,7 +13,7 @@ class Helper:
     def __init__(self, path):
         self.path = path
 
-    def get_path(self):
+    def get_folder(self):
         base_path = os.getcwd()
         return os.path.join(base_path, self.path)
 
