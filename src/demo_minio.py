@@ -3,12 +3,13 @@ import os
 import time
 import subprocess
 
+# export MINIO_ROOT_USER=minio_credential MINIO_ROOT_PASSWORD=minio_credential
 os.putenv("MINIO_ROOT_USER", "minio_credential")
 os.putenv("MINIO_ROOT_PASSWORD", "minio_credential")
 
 
 def start_minio():
-    os.system('minio server --console-address ":9001" /Users/zheng/minio_data')
+    os.system('minio server --console-address ":9001" /Users/zheng/Desktop/minio_data')
 
 
 def stop_minio():
