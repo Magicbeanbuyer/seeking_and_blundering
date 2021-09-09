@@ -1,17 +1,13 @@
--   name: orders-dev
-    partition_column: orderDate
-    #   if all columns are used for deduplication, use the following config
-    #    unique_id:
-    #        - 'all_columns'
-    deduplication:
-        unique_id:
-            - orderId
-            - orderStatus
--   name: orders
-    partition_column: orderDate
-    deduplication:
-        unique_id:
-            - orderId
-            - orderStatus
-        delay_threshold: 30 days
-        watermark: orderDate
+aws:
+  region_name: eu-central-1
+
+kafka:
+  cluster_name: dataeng-msk
+
+delta_lake:
+  s3_bucket: mop-dataeng-deltalake
+
+spark:
+  metadata_bucket: mop-dataeng-emrmetadata
+  kafka_package: org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1
+  delta_lake_package: io.delta:delta-core_2.12:1.0.0

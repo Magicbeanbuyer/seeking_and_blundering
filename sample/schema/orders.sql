@@ -1,0 +1,2 @@
+orderType STRING,
+orderId STRING
