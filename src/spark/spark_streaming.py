@@ -1,8 +1,11 @@
 # %%
 from pyspark.sql.streaming import StreamingQuery
 from pyspark.sql.types import StructType
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession, Window, functions
 import time
+import boto3
+from botocore import UNSIGNED
+from botocore.config import Config
 
 spark = (
     SparkSession.builder.appName("x")
@@ -84,10 +87,6 @@ time.sleep(30)
 query.stop()
 
 # %%
-import boto3
-from botocore import UNSIGNED
-from botocore.config import Config
-
 BUCKET = "deutsche-boerse-xetra-pds"
 s3 = boto3.client("s3", config=Config(signature_version=UNSIGNED))
 files = s3.list_objects_v2(Bucket=BUCKET, Prefix="2022-02-10")
@@ -161,15 +160,11 @@ dk = (
 dk.show()
 
 # %%
-from pyspark.sql import functions
-
 # dk.select("*", functions.concat_ws(" ", dk.date, dk.time).alias("datetime")).show()
 dk = dk.withColumn("datetime", functions.to_timestamp(functions.concat_ws(" ", dk.date, dk.time)))
 dk.show()
 # dk.printSchema()
 # %%
-from pyspark.sql import Window
-
 asc_window = Window.partitionBy("isin").orderBy(dk.datetime.asc())
 desc_window = Window.partitionBy("isin").orderBy(dk.datetime.desc())
 start_df = (
