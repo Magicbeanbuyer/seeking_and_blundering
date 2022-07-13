@@ -1,24 +1,22 @@
 default_language_version:
   python: python3.8
 
-fail_fast: true # stops executing subsequent hooks if one hook fails
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.3.0
     hooks:
       - id: check-yaml
       - id: check-json
 
   - repo: https://github.com/psf/black
-    rev: 21.7b0
+    rev: 22.6.0
     hooks:
       - id: black
         args: [-l 100, -v]
         stages: [commit]
 
   - repo: https://github.com/pycqa/flake8
-    rev: 3.9.2
+    rev: 4.0.1
     hooks:
       - id: flake8
         additional_dependencies: [flake8-docstrings]
@@ -30,12 +28,12 @@ repos:
 #      - id: mypy
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.7.2.1
+    rev: v0.8.0.4
     hooks:
       - id: shellcheck
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.17.13
+    rev: v2.28.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
