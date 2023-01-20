@@ -1,0 +1,24 @@
+name := "ciao"
+pwd := `pwd`
+
+default:
+  @just --list
+#default: lint build test
+
+build:
+  @echo Building…
+
+test:
+  echo Testing…
+
+lint:
+  echo Linting…
+
+braces:
+  echo 1 {{{{}}
+  echo 2 {{"{{}}"}}
+  echo 3 {{name}}
+  echo 4 "{{name}}"
+
+backtick:
+  @echo {{pwd}}
