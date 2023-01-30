@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package tutorial;
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+  repeated PhoneNumber phoneNumbers = 4;
+}
+
+// tag 1-15 should be used for frequently used elements.
+message PhoneNumber {
+  string number = 1;
+  optional PhoneType phoneType = 2;
+
+}
+
+message AddressBook {
+  repeated Person people = 1;
+}
+
+enum PhoneType {
+  MOBILE = 0; // question: why capitalized?
+  HOME = 1; // index from 0
+  WORK = 2;
+}
