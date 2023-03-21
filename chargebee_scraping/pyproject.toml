@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "chargebee-scraping"
+version = "0.1.0"
+description = ""
+authors = ["a b <ab@c.d>"]
+readme = "README.md"
+packages = [{include = "chargebee_scraping"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+beautifulsoup4 = "^4.12.0"
+jupyter = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
